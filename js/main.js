@@ -49,18 +49,33 @@ Game.prototype = {
     aiMove: function (){
 	   // implement, switch?
 	   // al final incPlays()
+	    var pAi;
+	    var pUser;
 	    var th = this;
 	    var icon = this.getAiIcon();
 	    var board = this.getBoard();
 	    var i = 0;
 	    var keep = true;
-	     while(i<board.length && keep){
+	    /* while(i<board.length && keep){
 		    if (th.checkEmpty(i)){
 			    keep = false;
 		    }
 			i++;
 	    }
-	    i= i-1;
+	    i= i-1;*/
+	    
+	    //implement better AI
+	    if(icon==jack){
+		    pAi='jack';
+		    pUser='john';
+	    }else{
+		    pAi='john';
+		    pUser='jack';
+	    }
+	    
+	    var i = th.evaluate(pUser,pAi); //implement
+	    
+	    
 	    switch (i) {
       case 0: 
 		 $("#0").append(icon);
@@ -168,8 +183,8 @@ Game.prototype = {
 				pAi='jack';
 			}
 		function columnWin(){
-			let b = th.getBoard();
-			for (let i=0; i<3; ++i){
+			var b = th.getBoard();
+			for (var i=0; i<3; ++i){
 				if (pUser === b[i] && pUser === b[i + 3] && pUser === b[i + 6]) {
 					ret = 1;
 			}
@@ -179,20 +194,20 @@ Game.prototype = {
 		}
 	}
 		function rowWin(){
-			let b = th.getBoard();
-			for (let i = 0; i <= 6; i += 3) {
+			var b = th.getBoard();
+			for (var i = 0; i <= 6; i += 3) {
 				if (pUser === b[i] && pUser === b[i + 1] && pUser === b[i + 2]) {
 					ret = 1;
 		}
-			for (let i = 0; i <= 6; i += 3) {
+			
 				if (pAi === b[i] && pAi === b[i + 1] && pAi === b[i + 2]) {
 					ret = -1;
 		}
 			}
 			}
-		}
+		
 		function diagonalWin(){
-			let b = th.getBoard();
+			var b = th.getBoard();
 			
 			if(pUser === b[0] && pUser === b[4] && pUser == b[8] ||
 		pUser === b[2] && pUser === b[4] && pUser == b[6]){
@@ -209,19 +224,19 @@ Game.prototype = {
 		diagonalWin();
 		
 		if (ret==1){
-			$('#buttonContainer').hide();
+			$('#buttonContainer').delay(1600).hide();
 			
 			$('#win').fadeIn(500);
 			$('#again').fadeIn(1000);
 		}
 		if (ret==-1){
-			$('#buttonContainer').hide();
+			$('#buttonContainer').delay(1600).hide();
 			
 			$('#loose').fadeIn(500);
 			$('#again').fadeIn(1000);
 		}
-		if (ret==0 && th.getPlays()>=9){
-			$('#buttonContainer').hide();
+		if (ret===0 && th.getPlays()>=9){
+			$('#buttonContainer').delay(1600).hide();
 			
 			$('#tie').fadeIn(500);
 			$('#again').fadeIn(1000);
@@ -246,6 +261,88 @@ Game.prototype = {
 		$('#8').html('');
 		$('#sides').fadeIn(500);
 		//location.reload();
+	},
+	evaluate: function(user,ai){
+		var ret;
+		var b = this.getBoard();
+		//ruled based strategy
+		
+		//if ai can win
+		
+		if(b[0] == 'e' &&((b[1]==ai && b[2]==ai) || (b[3]==ai && b[6]==ai) || (b[4]==ai && b[8]==ai))){
+			ret = 0;
+		}else if (b[1] == 'e' &&((b[0]==ai && b[2]==ai) || (b[4]==ai && b[7]==ai) )){
+			ret = 1;
+		}else if(b[2] == 'e' &&((b[0]==ai && b[1]==ai) || (b[5]==ai && b[8]==ai) || (b[4]==ai && b[6]==ai))){
+			ret = 2;
+		}else if(b[3] == 'e' &&((b[0]==ai && b[6]==ai) || (b[4]==ai && b[5]==ai))){
+			ret = 3;
+		}else if(b[4] == 'e' &&((b[0]==ai && b[8]==ai) || (b[2]==ai && b[6]==ai) || (b[1]==ai && b[7]==ai) || (b[3]==ai && b[5]==ai) )){
+			ret = 4;
+		}else if(b[5] == 'e' &&((b[3]==ai && b[4]==ai) || (b[2]==ai && b[8]==ai))){
+			ret = 5;
+		}else if(b[6] == 'e' &&((b[0]==ai && b[3]==ai) || (b[7]==ai && b[8]==ai) || (b[4]==ai && b[2]==ai))){
+			ret = 6;
+		}else if(b[7] == 'e' &&((b[1]==ai && b[4]==ai) || (b[6]==ai && b[8]==ai))){
+			ret = 7;
+		}else if(b[8] == 'e' &&((b[0]==ai && b[4]==ai) || (b[2]==ai && b[5]==ai) || (b[6]==ai && b[7]==ai))){
+			ret = 8;
+		}
+		//if ai can stop user from winning
+		else if(b[0] == 'e' &&((b[1]==user && b[2]==user) || (b[3]==user && b[6]==user) || (b[4]==user && b[8]==user))){
+			ret = 0;
+		}else if (b[1] == 'e' &&((b[0]==user && b[2]==user) || (b[4]==user && b[7]==user) )){
+			ret = 1;
+		}else if(b[2] == 'e' &&((b[0]==user && b[1]==user) || (b[5]==user && b[8]==user) || (b[4]==user && b[6]==user))){
+			ret = 2;
+		}else if(b[3] == 'e' &&((b[0]==user && b[6]==user) || (b[4]==user && b[5]==user))){
+			ret = 3;
+		}else if(b[4] == 'e' &&((b[0]==user && b[8]==user) || (b[2]==user && b[6]==user) || (b[1]==user && b[7]==user) || (b[3]==user && b[5]==user) )){
+			ret = 4;
+		}else if(b[5] == 'e' &&((b[3]==user && b[4]==user) || (b[2]==user && b[8]==user))){
+			ret = 5;
+		}else if(b[6] == 'e' &&((b[0]==user && b[3]==user) || (b[7]==user && b[8]==user) || (b[4]==user && b[2]==user))){
+			ret = 6;
+		}else if(b[7] == 'e' &&((b[1]==user && b[4]==user) || (b[6]==user && b[8]==user))){
+			ret = 7;
+		}else if(b[8] == 'e' &&((b[0]==user && b[4]==user) || (b[2]==user && b[5]==user) || (b[6]==user && b[7]==user))){
+			ret = 8;
+		}
+		//center
+		else if(b[4]=='e'){
+			ret=4;
+		}
+		//opposite corner
+		else if(b[0]=='e' && b[8]==user){
+			ret=0;
+		}else if(b[2]=='e' && b[6]==user){
+			ret=2;
+		}else if(b[6]=='e' && b[2]==user){
+			ret=6;
+		}else if(b[8]=='e' && b[0]==user){
+			ret=8;
+		}
+		// any corner
+		else if(b[0]=='e' ){
+			ret=0;
+		}else if(b[2]=='e' ){
+			ret=2;
+		}else if(b[6]=='e' ){
+			ret=6;
+		}else if(b[8]=='e'){
+			ret=8;
+		}
+		//any side
+		else if(b[1]=='e' ){
+			ret=1;
+		}else if(b[3]=='e' ){
+			ret=3;
+		}else if(b[5]=='e' ){
+			ret=5;
+		}else if(b[7]=='e'){
+			ret=7;
+		}
+		return ret;
 	}
     
 };
