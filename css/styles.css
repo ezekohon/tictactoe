@@ -113,8 +113,8 @@ section.container-method > .container {
 
 .btn{
 	text-align: center;
-	height: 120px;
-	width: 120px;
+	height: 8em;
+	width: 8em;
 	padding: 10px;
 	margin:4px;
 	border:solid;
