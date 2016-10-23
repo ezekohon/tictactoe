@@ -98,8 +98,8 @@ section.container-method > .container {
 	}
 
 .circularChico {
-	width: 7.5vmin;
-	height: 7.5vmin;
+	width: 7.5vh;
+	height: 7.5vh;
 	width: 100%;
     height: auto;
 	border-radius: 150px;
