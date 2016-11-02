@@ -241,6 +241,7 @@ Game.prototype = {
 			$('#tie').fadeIn(500);
 			$('#again').fadeIn(1000);
 		}
+
 	
 		
 	},
@@ -392,6 +393,7 @@ $(document).ready(function () {
 		$('#again').hide();
 		
 		newGame.resetGame();
+		$('#again').hide();
 	});
 	
 	$('#no').on('click', function(){
@@ -400,6 +402,7 @@ $(document).ready(function () {
 		$('#tie').hide();
 		$('#again').hide();
 		$('#seeyou').fadeIn(500);
+		$('#again').hide();
 	});
 	
 	
@@ -421,7 +424,7 @@ $(document).ready(function () {
 			} else {
 		    		newGame.updateBoard('john',0);
 			}
-		   newGame.checkWhoWon();
+		  newGame.checkWhoWon();
 		
 		   
 		   
