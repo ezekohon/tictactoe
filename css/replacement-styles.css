@@ -33,7 +33,7 @@ section.container-method > .container {
 
 .title {
 	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
-	font-size: 6vw;
+	font-size: 4em;
 /*	margin-top: 7%;*/
 	color: black;
 	
@@ -43,14 +43,14 @@ section.container-method > .container {
 
 #dharma{
 /*	margin-top: 7%;*/
-	max-width: 13vmax;
+	max-width: 17vmax;
 	width: 100%;
     height: auto;
 }
 
 .choose {
 	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
-	font-size: 4vw;
+	font-size: 3em;
 /*	margin-top: 7%;*/
 	color: black;
 	
@@ -67,7 +67,7 @@ section.container-method > .container {
 
 .title2 {
 	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
-	font-size: 5vw;
+	font-size: 3em;
 /*
 	margin-top: 8%;
 	margin-right: 2.5vw;
@@ -79,8 +79,8 @@ section.container-method > .container {
 }
 
 .circular {
-	max-width: 13vh;
-	max-height: 13vh;
+	max-width: 13vmax;
+	max-height: 13vmax;
 	width: 100%;
     height: auto;
 	border-radius: 150px;
@@ -98,10 +98,11 @@ section.container-method > .container {
 	}
 
 .circularChico {
-	width: 7.5vh;
-	height: 7.5vh;
+	
+	
 	width: 100%;
     height: auto;
+	 
 	border-radius: 150px;
 	-webkit-border-radius: 150px;
 	-moz-border-radius: 150px;
@@ -115,8 +116,8 @@ section.container-method > .container {
 #vs{
 	width: 100%;
     height: auto;
-	max-height:9vh;
-	max-width: 9vh;
+	max-height:13vmax;
+	max-width: 9vmax;
 /*	margin-top:8%;*/
 }
 
@@ -128,8 +129,8 @@ section.container-method > .container {
 
 .btn{
 	text-align: center;
-	height: 8vmax;
-	width: 8vmax;
+	height: 12vmax;
+	width: 12vmax;
 	padding: 10px;
 	margin:0.2%;
 	border:solid;
@@ -166,6 +167,7 @@ a:hover{
 	font-family: 'Merriweather', serif;
 	font-size: 3vw;
 	padding: 15%;
+	margin: 15%;
 /*
 	margin-top: 70px;
 	margin-right: 30px;
@@ -180,7 +182,7 @@ a:hover{
 
 #seeyou{
 	font-family: 'Merriweather', serif;
-	font-size: 5vmin;
+	font-size: 3em;
 	margin-top: 20%;
 	color: black;
 	font-weight: bolder;	
