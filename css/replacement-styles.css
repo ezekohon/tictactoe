@@ -11,10 +11,10 @@ body {
   color: white;
   font: 18px/1.5 'Avenir Next', 'Avenir', 'Helvetica', 'Helvetica Neue', 'Arial', sans-serif;
   -webkit-font-smoothing: antialiased;
-	
+
 }
 
-section.container-method { 
+section.container-method {
   	background-image: url("https://i.imgsafe.org/fda83c2716.jpg");
 	background-repeat: no-repeat;
   	width: 100%;
@@ -28,17 +28,17 @@ section.container-method {
 section.container-method > .container {
   max-width: 700px;
   margin: 0 auto;
-	
+
 }
 
 .title {
 	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
-	font-size: 4em;
+	font-size: 3em;
 /*	margin-top: 7%;*/
 	color: black;
-	
+
 	font-weight: bolder;
-	
+
 }
 
 #dharma{
@@ -53,8 +53,8 @@ section.container-method > .container {
 	font-size: 3em;
 /*	margin-top: 7%;*/
 	color: black;
-	
-	font-weight: bolder;	
+
+	font-weight: bolder;
 }
 
 .choose:hover{
@@ -62,12 +62,12 @@ section.container-method > .container {
 }
 
 #sides{
-	
+
 }
 
 .title2 {
 	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
-	font-size: 3em;
+	font-size: 2em;
 /*
 	margin-top: 8%;
 	margin-right: 2.5vw;
@@ -89,7 +89,7 @@ section.container-method > .container {
   box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-	
+
 /*
 	margin-top: 7%;
 	margin-right: 3vmin;
@@ -98,19 +98,19 @@ section.container-method > .container {
 	}
 
 .circularChico {
-	
-	
+
+
 	width: 100%;
     height: auto;
-	 
+
 	border-radius: 150px;
 	-webkit-border-radius: 150px;
 	-moz-border-radius: 150px;
   box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-	
-	
+
+
 	}
 
 #vs{
@@ -122,7 +122,7 @@ section.container-method > .container {
 }
 
 #buttonContainer{
-	
+
 /*	margin-top:100px;*/
 	font-size:0;
 }
@@ -137,21 +137,21 @@ section.container-method > .container {
 	border-width: 7px;
 	color:black;
 	border-radius: 14px;
-	
+
 }
 
 a:hover{
 	cursor: pointer;
-	
+
 }
 
 .inline{
 	display:inline-block;
-	
+
 }
 
 .wrap {
-  
+
   display: none;
 }
 
@@ -160,7 +160,7 @@ a:hover{
 	font-size: 3vw;
 /*	margin-top: 10px;*/
 	color: black;
-	font-weight: bolder;	
+	font-weight: bolder;
 }
 
 .yes{
@@ -185,7 +185,7 @@ a:hover{
 	font-size: 3em;
 	margin-top: 20%;
 	color: black;
-	font-weight: bolder;	
+	font-weight: bolder;
 }
 
 .footer {
@@ -193,6 +193,6 @@ a:hover{
 	position: relative;
 	font-size: 2vw;
 	font-family: 'Merriweather', serif;
-	margin-top: 10%; 
-	
+	margin-top: 10%;
+
 }
